@@ -21,3 +21,9 @@ cp gitacp /usr/local/bin/gitacp
 ```
 
 That's it.
+
+### Usage
+```
+gitacp '#ISSUE-99. add myFunc'
+```
+CAUTION: use with laziness =)
