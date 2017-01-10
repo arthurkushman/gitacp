@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
   char data[BUFF_SIZE];
   char str[GIT_BUFF_SIZE];
 
-  strcpy(str, "git add --all && git add . && git commit -m '\t*\t");
+  strcpy(str, "git add --all && git add . && git commit -am '\t*\t");
   strcat(str, argv[1]);
   strcat(str, "' && git push");
   FILE* fp = popen(str, "r");
@@ -30,7 +30,8 @@ int main(int argc, char* argv[])
   }
 
   if (pclose(fp) < 0) {
-    printf("%s\n", "Error: pclose couldn`t close the pipe.");
+    printf("-%s-%s-%s-\n", ANSI_COLOR_RED, "Error: pclose couldn`t close the pipe.", ANSI_COLOR_RESET);
+    exit(1);
   }
 
     return 0;
